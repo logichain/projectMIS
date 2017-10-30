@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="tenderInputForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="tenderInfo" type="org.king.projectmanage.bean.TenderProject" />
+			<form-property name="customerInfo" type="org.king.customer.bean.Customer" />
+			<form-property name="accountInfo" type="org.king.security.domain.Account" />
+			<form-property name="personInfo" type="org.king.security.domain.Person" />
+			<form-property name="firstDeviceInfo" type="org.king.tender.bean.DeviceList1st" />
+			<form-property name="secondDeviceInfo" type="org.king.tender.bean.DeviceList2nd" />
+			<form-property name="detailDeviceInfo" type="org.king.tender.bean.DeviceListDetail" />
+			<form-property name="budgetItemInfo" type="org.king.tender.bean.BudgetItem" />
+		</form-bean>
+		
+		<form-bean name="tenderProjectForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="tenderInfo" type="org.king.projectmanage.bean.TenderProject" />
+			<form-property name="customerInfo" type="org.king.customer.bean.Customer" />
+			<form-property name="accountInfo" type="org.king.security.domain.Account" />
+			<form-property name="personInfo" type="org.king.security.domain.Person" />
+			
+			<form-property name="competitorInfo" type="org.king.customer.bean.Customer" />
+			
+			<form-property name="attachmentInfo" type="org.king.projectmanage.bean.ProjectAttachment" />
+			<form-property name="searchInfo" type="org.king.projectmanage.bean.ProjectAttachment" />
+			
+			<form-property name="firstDeviceInfo" type="org.king.tender.bean.DeviceList1st" />
+			<form-property name="secondDeviceInfo" type="org.king.tender.bean.DeviceList2nd" />
+			<form-property name="detailDeviceInfo" type="org.king.tender.bean.DeviceListDetail" />
+			<form-property name="budgetItemInfo" type="org.king.tender.bean.BudgetItem" />
+			
+			<form-property name="checkTaskInfo" type="org.king.common.checktask.CheckTask" />
+			<form-property name="teamMemberInfo" type="org.king.projectmanage.bean.ProjectTeam" />
+		</form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<action path="/tenderManage" type="org.king.tender.action.TenderManageAction" parameter="method" name="tenderInputForm" validate="false" unknown="false">			
+			<forward name="input" path="editTenderDef" redirect="false"/>
+			<forward name="searchTender" path="searchTenderDef" redirect="false"/>
+			<forward name="addAttachment" path="uploadAttachmentDef" redirect="false"/>
+
+			<forward name="searchContacter" path="searchCustomerDef" redirect="false"/>
+			<forward name="searchAccount" path="searchAccountDef" redirect="false"/>
+			<forward name="refeshBase" path="refeshBaseDef" redirect="false"/>
+			
+			
+			<forward name="customerInput" path="inputCreateCustomerDef" redirect="false" />
+		</action>
+		
+		<action path="/tenderProjectManage" type="org.king.tender.action.TenderManageAction" parameter="method" name="tenderProjectForm" validate="false" unknown="false">			
+			<forward name="editBaseTenderProject" path="editBaseTenderProjectDef" redirect="false"/>
+			<forward name="attachmentList" path="attachmentListDef" redirect="false"/>
+			<forward name="editAttachment" path="editAttachmentDef" redirect="false"/>
+			<forward name="searchAttachmentList" path="/tenderProjectManage.do?method=searchAttachmentList" redirect="true"/>
+			<forward name="searchContacter" path="searchCustomerForEditDef" redirect="false"/>
+			
+			<forward name="searchCompetitor" path="searchCompetitorForEditDef" redirect="false"/>
+			
+			<forward name="searchAccount" path="searchAccountForEditDef" redirect="false"/>
+			<forward name="addAttachment" path="addAttachmentDef" redirect="false"/>
+			<forward name="uploadReturn" path="uploadReturnDef" redirect="false"/>
+			<forward name="refeshAttachment" path="refeshAttachmentDef" redirect="false"/>
+			<forward name="editTenderResult" path="editTenderResultDef" redirect="false"/>
+			<forward name="editCompetitor" path="editCompetitorDef" redirect="false"/>
+			<forward name="refeshResultreturn" path="refeshResultReturnDef" redirect="false"/>
+			<forward name="refeshCompetitorreturn" path="refeshCompetitorReturnDef" redirect="false"/>
+			<forward name="teamMemberInput" path="editTeamMemberDef" redirect="false"/>
+			
+			<forward name="refreshTeam" path="YrefreshTeamDef" redirect="false"/>
+			<forward name="searchBudgetProject" path="searchBudgetProjectDef" redirect="false"/>
+			
+			<forward name="editTenderBugetItem" path="editTenderBugetItemDef" redirect="false"/>
+			
+			
+			<forward name="editDetailBudgetItem" path="editDetailBugetItemDef" redirect="false"/>
+			<forward name="refreshBudgetItem" path="refreshBudgetItemDef" redirect="false"/>
+			<forward name="refreshApplyBudget" path="refreshApplayBudgetDef" redirect="false"/>
+			<forward name="editDeviceList" path="editDeviceListDef" redirect="false"/>
+			<forward name="faile" path="/msg.do" redirect="false" />
+			
+			<forward name="addFirstDevice" path="addFirstDeviceDef" redirect="false"/>
+			<forward name="refreshDeviceList" path="refreshDeviceListDef" redirect="false"/>
+			<forward name="addSecondDevice" path="addSecondDeviceDef" redirect="false"/>
+			<forward name="addDetailDevice" path="addDetailDeviceDef" redirect="false"/>
+			
+			<forward name="detailDeviceReportPrice" path="detailDeviceReportPriceDef" redirect="false"/>
+			<forward name="editBaseQuotedPrice" path="editBaseQuotedPriceDef" redirect="false"/>
+			<forward name="chooseDetailDeviceSupplier" path="chooseDetailDeviceSupplierDef" redirect="false"/>
+			
+			<forward name="refreshEditBaseQuotedPrice" path="refreshEditBaseQuotedPriceDef" redirect="false"/>
+			<forward name="searchSupplier" path="searchQuotePriceSupplierDef" redirect="false"/>
+			
+			<forward name="deviceQuotedPrice" path="deviceQuotedPriceDef" redirect="false"/>
+			<forward name="confirmsupplier" path="confirmSupplierDef" redirect="false"/>
+			<forward name="addBaseDetailDevice" path="addBaseDetailDeviceDef" redirect="false"/>
+			<forward name="refreshDeviceQuotedPrice" path="refreshDeviceQuotedPriceDef" redirect="false"/>
+			<forward name="refreshChooseSupplier" path="refreshChooseSupplierDef" redirect="false"/>
+			<forward name="refreshDetailDeviceReportPrice" path="refreshDetailDeviceReportPriceDef" redirect="false"/>
+						
+			<forward name="refeshCreateCustomer" path="refeshCreateCustomerDef" redirect="false"/>
+			
+			<forward name="contractCheck" path="tenderContractCheckDef" redirect="false"/>
+			<forward name="refreshContract" path="refreshContractDef" redirect="false"/>
+			
+			<forward name="searchTender" path="searchTenderDef" redirect="false"/>
+			
+			<forward name="baseDisplay" path="displayTenderBaseDef" redirect="false"/>
+			<forward name="competitorDisplay" path="displayTenderCompetitorDef" redirect="false"/>
+			<forward name="confirmsupplierDisplay" path="displayTenderConfirmsupplierDef" redirect="false"/>
+			<forward name="contractcheckDisplay" path="displayTenderContractcheckDef" redirect="false"/>
+			
+			<forward name="deviceAskPriceDisplay" path="displayTenderDeviceAskPriceDef" redirect="false"/>
+			<forward name="deviceListDisplay" path="displayTenderDeviceListDef" redirect="false"/>
+			<forward name="teamMemberDisplay" path="displayTenderTeamMemberDef" redirect="false"/>
+			<forward name="budgetDisplay" path="displayTenderBudgetDef" redirect="false"/>
+			<forward name="tenderFileDisplay" path="displayTenderFileDef" redirect="false"/>
+			
+			<forward name="transferObjectList" path="transferObjectListDef" redirect="false"/>
+			<forward name="refreshTenderProjectList" path="refreshTenderProjectListDef" redirect="false"/>
+			<forward name="refreshTenderBase" path="refreshTenderBaseDef" redirect="false"/>
+			
+			<forward name="checkTaskList" path="checkTaskListDef" redirect="false"/>
+			
+			<forward name="tenderDocumentInput" path="editTenderDocumentDef" redirect="false"/>	
+			<forward name="uploadTenderAttachment" path="uploadTenderAttachmentForEditDef" redirect="false"/>
+			<forward name="refreshTenderDocument" path="refreshTenderDocumentDef" redirect="false"/>
+			<forward name="tenderDocumentDisplay" path="displayTenderDocumentDef" redirect="false"/>
+			<forward name="editTenderAttachment" path="editTenderAttachmentDef" redirect="false"/>
+		</action>
+	
+	</action-mappings>
+</struts-config>

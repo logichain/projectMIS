@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ************************** DAO SETTING *********************************-->
+	<!-- DAO object: Hibernate implementation -->
+	<bean id="tenderProjectDAO" class="org.king.projectmanage.dao.TenderProjectDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="projectAttachmentDAO" class="org.king.projectmanage.dao.ProjectAttachmentDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="projectTeamDAO" class="org.king.projectmanage.dao.ProjectTeamDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="projectScheduleStageDAO" class="org.king.projectmanage.dao.ProjectScheduleStageDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="projectScheduleTaskDAO" class="org.king.projectmanage.dao.ProjectScheduleTaskDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="taskChangeRecordDAO" class="org.king.projectmanage.dao.TaskChangeRecordDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="taskImplementRecordDAO" class="org.king.projectmanage.dao.TaskImplementRecordDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="projectContractDAO" class="org.king.projectmanage.dao.ProjectContractDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="accountSaleContractDAO" class="org.king.accountmanage.dao.AccountSaleContractDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="accountPurchaseContractDAO" class="org.king.accountmanage.dao.AccountPurchaseContractDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="accountFeeTaxDAO" class="org.king.accountmanage.dao.AccountFeeTaxDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="departmentDAO" class="org.king.department.dao.DepartmentDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="checkTaskDAO" class="org.king.common.checktask.CheckTaskDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="projectApprovalRecordDAO" class="org.king.projectmanage.dao.ProjectApprovalRecordDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="accountDAO" class="org.king.security.dao.hibernate.AccountDAOHibernate">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="postDAO" class="org.king.common.post.PostDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="tenderAttachmentDAO" class="org.king.projectmanage.dao.TenderAttachmentDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<!-- ************************** SERVICE SETTING *****************************-->
+	
+	<bean id="projectManageService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<bean class="org.king.projectmanage.service.impl.ProjectManageServiceImpl">
+				<property name="tenderProjectDAO">
+					<ref local="tenderProjectDAO" />
+				</property>
+				<property name="projectAttachmentDAO">
+					<ref local="projectAttachmentDAO" />
+				</property>
+				<property name="projectTeamDAO">
+					<ref local="projectTeamDAO" />
+				</property>
+				<property name="projectScheduleStageDAO">
+					<ref local="projectScheduleStageDAO" />
+				</property>
+				<property name="projectScheduleTaskDAO">
+					<ref local="projectScheduleTaskDAO" />
+				</property>
+				<property name="taskChangeRecordDAO">
+					<ref local="taskChangeRecordDAO" />
+				</property>
+			
+				<property name="taskImplementRecordDAO">
+					<ref local="taskImplementRecordDAO" />
+				</property>
+				<property name="projectContractDAO">
+					<ref local="projectContractDAO" />
+				</property>
+				<property name="accountSaleContractDAO">
+					<ref local="accountSaleContractDAO" />
+				</property>
+				<property name="accountPurchaseContractDAO">
+					<ref local="accountPurchaseContractDAO" />
+				</property>
+				<property name="accountFeeTaxDAO">
+					<ref local="accountFeeTaxDAO" />
+				</property>
+				<property name="departmentDAO">
+					<ref local="departmentDAO" />
+				</property>	
+				<property name="checkTaskDAO">
+					<ref local="checkTaskDAO" />
+				</property>
+				
+				<property name="projectApprovalRecordDAO">
+					<ref local="projectApprovalRecordDAO" />
+				</property>
+				
+				<property name="accountDAO">
+					<ref local="accountDAO" />
+				</property>
+				<property name="postDAO">
+					<ref local="postDAO" />
+				</property>
+				
+				<property name="tenderAttachmentDAO">
+					<ref local="tenderAttachmentDAO" />
+				</property>
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="modify*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+
+	
+</beans>

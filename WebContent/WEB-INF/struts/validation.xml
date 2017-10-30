@@ -1,0 +1,285 @@
+<!DOCTYPE form-validation PUBLIC
+     "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.2.0//EN"
+     "http://jakarta.apache.org/commons/dtds/validator_1_2_0.dtd">
+
+<form-validation>
+	<global>
+		<constant>
+			<constant-name>phone</constant-name>
+			<constant-value>^[0-9,-]*$</constant-value>
+		</constant>
+		<constant>
+            <constant-name>datePattern</constant-name>
+            <constant-value>yyyy-MM-dd</constant-value>
+        </constant>
+        <constant>       
+            <constant-name>email</constant-name>
+            <constant-value>^\s*([A-Za-z0-9]+(\.\w+)*@([\w-]+\.)+\w{2,3})\s*$</constant-value>
+        </constant>
+	</global>
+	<formset>
+		<form name="loginForm">
+			<field property="name" depends="required, minlength,maxlength">
+				<arg position="0" key="loginForm.login.name" />
+				<arg position="1" key="${var:minlength}" name="minlength" resource="false" />
+			    <arg position="2" key="${var:maxlength}" name="maxlength" resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>32</var-value>
+				</var>
+			</field>
+			<field property="password" depends="required, minlength,maxlength">
+				<arg position="0" key="loginForm.login.password" />
+				<arg position="1" key="${var:minlength}" name="minlength" resource="false" />
+				<arg position="2" key="${var:maxlength}" name="maxlength" resource="false" />
+				
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>32</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="accountForm">
+			<field property="account.name" depends="required, minlength,maxlength">
+				<arg position="0" key="accountForm.account.name" />
+				<arg position="1" name="minlength" key="${var:minlength}" resource="false" />
+				<arg position="2" name="maxlength" key="${var:maxlength}" resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+								<var>
+					<var-name>maxlength</var-name>
+					<var-value>32</var-value>
+				</var>
+			</field>
+			<field property="account.password" depends="required,minlength,maxlength,twofields">
+				<arg position="0" key="accountForm.account.password" />
+				<arg position="1" name="minlength" key="${var:minlength}" resource="false" />
+				<arg position="2" name="maxlength" key="${var:maxlength}" resource="false" />
+				
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>32</var-value>
+				</var>
+				<var>
+					<var-name>secondProperty</var-name>
+					<var-value>account.repassword</var-value>
+				</var>
+			</field>
+			<field property="account.repassword" depends="required, minlength,maxlength">
+				
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>3</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>32</var-value>
+				</var>
+				<arg position="0" key="accountForm.account.repassword" />
+				
+				<arg position="1" name="minlength" key="${var:minlength}" resource="false" />
+				<arg position="2" name="maxlength" key="${var:maxlength}" resource="false" />
+				
+			</field>
+			<field property="account.person.personName" depends="required">
+				<arg position="0" key="accountForm.person.name" />
+			</field>
+			
+		</form>
+				
+		<form name="projectSearchForm">
+			<field property="projectInfo.tpName" depends="required">
+				<arg position="0" bundle="projectmanage" key="project.name"  />
+			</field>			
+			<field property="projectInfo.customer.CName" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.clientName" />
+			</field>
+			<field property="projectInfo.tpDept" depends="required">
+				<arg position="0" bundle="projectmanage" key="project.dept" />
+			</field>
+			<field property="projectInfo.tpAddress" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.projectAddress" />
+			</field>
+			<field property="projectInfo.manager.person.personName" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.manager" />
+			</field>
+			<field property="projectInfo.marketManager.person.personName" depends="required">
+				<arg position="0" bundle="approvalrecord" key="market_manager" />
+			</field>
+			<field property="projectInfo.tpBeginDate" depends="required">
+				<arg position="0" bundle="projectmanage" key="project.begindate"  />
+			</field>
+			<field property="projectInfo.tpEndDate" depends="required">
+				<arg position="0" bundle="projectmanage" key="project.enddate" />
+			</field>
+			
+			<field property="projectInfo.tpDescription" depends="maxlength">
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>300</var-value>
+				</var>
+				<arg position="0" bundle="tendermanage" key="tender.projectDescription"  />
+				<arg position="2" key="${var:maxlength}" resource="false"/>
+			</field>			
+		</form>
+		
+		<form name="customerForm">	
+				
+			<field property="customerInfo.CName" depends="required">
+				<arg position="0" bundle="customer" key="customer.name"  />
+			</field>
+			<field property="customerInfo.CType" depends="required">
+				<arg position="0" bundle="customer" key="customer.type"  />
+			</field>
+			
+			<field property="customerInfo.CAddress" depends="required">
+				<arg position="0" bundle="customer" key="customer.address"  />
+			</field>
+			<field property="customerInfo.CPhone" depends="required">
+				<arg position="0" bundle="customer" key="customer.phone"  />
+			</field>
+			
+			<field property="customerInfo.CRemarks" depends="maxlength">
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+				<arg position="0" bundle="customer" key="customer.remarks"  />
+				<arg position="2" key="${var:maxlength}" resource="false"/>
+			</field>
+		</form>
+					
+		<form name="documentForm">			
+			<field property="documentInfo.attachmentFile" depends="required">
+				<arg position="0" bundle="attachment" key="selectfile"  />
+			</field>
+			<field property="documentInfo.paAttachmentCategory" depends="required">
+				<arg position="0" bundle="attachment" key="category"  />
+			</field>
+			<field property="documentInfo.paName" depends="required">
+				<arg position="0" bundle="attachment" key="filename"  />
+			</field>
+			
+			<field property="documentInfo.paSubmitDate" depends="required">
+				<arg position="0" bundle="attachment" key="submitdate"  />
+			</field>
+			<field property="documentInfo.paDescription" depends="maxlength">
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+				<arg position="0" bundle="attachment" key="remarks"  />
+				<arg position="2" key="${var:maxlength}" resource="false"/>
+			</field>
+		</form>
+		
+		<form name="tenderInputForm">
+			<field property="tenderInfo.tpName" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.projectName" />
+			</field>
+			<field property="tenderInfo.customer.CName" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.clientName" />
+			</field>
+			<field property="tenderInfo.tpAddress" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.projectAddress" />
+			</field>
+			<field property="tenderInfo.manager.person.personName" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.manager" />
+			</field>
+			<field property="tenderInfo.marketManager.person.personName" depends="required">
+				<arg position="0" bundle="approvalrecord" key="market_manager" />
+			</field>
+			<field property="tenderInfo.tpBeginDate" depends="required">
+				<arg position="0" bundle="projectmanage" key="project.begindate"  />
+			</field>
+			<field property="tenderInfo.tpEndDate" depends="required">
+				<arg position="0" bundle="projectmanage" key="project.enddate" />
+			</field>
+			
+			<field property="tenderInfo.tpDescription" depends="maxlength">
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>300</var-value>
+				</var>
+				<arg position="0" bundle="tendermanage" key="tender.projectDescription"  />
+				<arg position="2" key="${var:maxlength}" resource="false"/>
+			</field>
+		</form>
+		<form name="tenderProjectForm">
+			
+			<field property="tenderInfo.tpName" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.projectName" />
+			</field>
+			<field property="tenderInfo.customer.CName" depends="required">
+				<arg position="0" bundle="tendermanage" key="tender.clientName" />
+			</field>
+			<field property="tenderInfo.tpBeginDate" depends="required">
+				<arg position="0" bundle="projectmanage" key="project.begindate"  />
+			</field>
+			<field property="tenderInfo.tpEndDate" depends="required">
+				<arg position="0" bundle="projectmanage" key="project.enddate" />
+			</field>
+			
+			<field property="tenderInfo.tpDescription" depends="maxlength">
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>300</var-value>
+				</var>
+				<arg position="0" bundle="tendermanage" key="tender.projectDescription"  />
+				<arg position="2" key="${var:maxlength}" resource="false"/>
+			</field>
+		</form>
+		
+		<form name="departmentForm">			
+			<field property="departmentInfo.DName" depends="required">
+				<arg position="0" bundle="department" key="department.name"  />
+			</field>
+		
+			<field property="departmentInfo.DDescription" depends="maxlength">
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+				<arg position="0" bundle="department" key="department.description"  />
+				<arg position="2" key="${var:maxlength}" resource="false"/>
+			</field>
+		</form>
+		<form name="noticeForm">	
+				
+			<field property="noticeInfo.inTheme" depends="required">
+				<arg position="0" bundle="notice" key="notice.theme"  />
+			</field>
+			<field property="noticeInfo.inType" depends="required">
+				<arg position="0" bundle="notice" key="notice.type"  />
+			</field>
+			<field property="noticeInfo.inReleaseDate" depends="required">
+				<arg position="0" bundle="notice" key="release.date"  />
+			</field>
+			
+			<field property="noticeInfo.inRemark" depends="maxlength">
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>600</var-value>
+				</var>
+				<arg position="0" bundle="customer" key="customer.remarks"  />
+				<arg position="2" key="${var:maxlength}" resource="false"/>
+			</field>
+		</form>
+	</formset>
+</form-validation>

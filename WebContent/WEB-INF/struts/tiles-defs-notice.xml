@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+          "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>	
+	<definition name="listNoticeDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/notice/noticeList.jsp" />
+	</definition>	
+	<definition name="aboutListNoticeDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/about/noticeList.jsp" />
+	</definition>	
+	<definition name="inputNoticeDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/notice/noticeInput.jsp" />
+	</definition>
+	<definition name="displayNoticeDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/notice/noticeDisplay.jsp" />
+	</definition>
+	<definition name="refreshInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/notice/refreshInput.jsp" />
+	</definition>
+	<definition name="uploadAttachmentForEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/notice/uploadattachment.jsp" />
+	</definition>
+</tiles-definitions>

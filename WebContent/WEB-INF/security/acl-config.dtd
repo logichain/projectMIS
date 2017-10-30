@@ -1,0 +1,12 @@
+<!-- acl-config element -->
+<!ELEMENT acl-config ( ProtectedResource+ ) >
+<!ATTLIST acl-config id CDATA #REQUIRED>
+
+<!-- ProtectedResource element -->
+<!ELEMENT ProtectedResource (code, name, url ) >
+
+<!ATTLIST ProtectedResource id CDATA #REQUIRED>
+<!-- ProtectedResource children -->
+<!ELEMENT code ( #PCDATA ) >
+<!ELEMENT name ( #PCDATA ) >
+<!ELEMENT url ( #PCDATA ) >

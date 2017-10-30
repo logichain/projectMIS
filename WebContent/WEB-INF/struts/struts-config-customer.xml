@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="customerForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="searchInfo" type="org.king.customer.bean.Customer" />
+			<form-property name="customerInfo" type="org.king.customer.bean.Customer" />
+			<form-property name="accountInfo" type="org.king.security.domain.Account" />			
+		</form-bean>		
+								
+	</form-beans>
+
+	<action-mappings>
+		<action path="/customerManage" type="org.king.customer.action.CustomerAction" parameter="method" name="customerForm" validate="false" unknown="false">
+			<forward name="input" path="inputCustomerDef" redirect="false" />
+			<forward name="searchAccount" path="customerSearchAccountDef" redirect="false"/>
+			<forward name="display" path="displayCustomerDef" redirect="false" />			
+			<forward name="list" path="listCustomerDef" redirect="false" />
+			<forward name="qualifiedList" path="listQualifiedCustomerDef" redirect="false" />
+			<forward name="refreshInput" path="refeshInputDef" redirect="false"/>
+			
+			<forward name="uploadAttachment" path="uploadCustomerAttachmentDef" redirect="false" />
+		</action>		
+		
+	</action-mappings>
+</struts-config>

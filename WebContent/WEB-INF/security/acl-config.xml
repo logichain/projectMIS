@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE acl-config SYSTEM "acl-config.dtd">
+  <acl-config id="1">
+    <ProtectedResource id="2">
+      <code>00</code>
+      <name>投标</name>
+      <url>tenderManage.do</url>
+    </ProtectedResource>
+    <ProtectedResource id="3">
+      <code>01</code>
+      <name>项目管理</name>
+      <url>projectManage.do</url>
+    </ProtectedResource>
+    <ProtectedResource id="4">
+      <code>03</code>
+      <name>文档</name>
+      <url>documentManage.do</url>
+    </ProtectedResource>
+    <ProtectedResource id="5">
+      <code>04</code>
+      <name>往来单位</name>
+      <url>customerManage.do</url>
+    </ProtectedResource>
+    <ProtectedResource id="6">
+      <code>99</code>
+      <name>员工管理</name>
+      <url>accountManager.do</url>
+    </ProtectedResource>
+    <ProtectedResource id="7">
+      <code>99</code>
+      <name>部门管理</name>
+      <url>departmentManage.do</url>
+    </ProtectedResource>
+  </acl-config>

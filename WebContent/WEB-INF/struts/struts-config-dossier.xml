@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>		
+		<form-bean name="documentForm" type="org.apache.struts.validator.DynaValidatorForm">			
+			<form-property name="documentInfo" type="org.king.projectmanage.bean.ProjectAttachment" />
+			<form-property name="searchInfo" type="org.king.projectmanage.bean.ProjectAttachment" />		
+		</form-bean>		
+								
+	</form-beans>
+
+	<action-mappings>			
+		<action path="/documentManage" type="org.king.dossier.action.DossierManageAction" parameter="method" name="documentForm" validate="false" unknown="false">
+			<forward name="input" path="inputDocumentDef" redirect="false" />
+			<forward name="edit" path="editDocumentDef" redirect="false" />
+			<forward name="list" path="listDocumentDef" redirect="false" />
+			
+		</action>	
+		
+	</action-mappings>
+</struts-config>

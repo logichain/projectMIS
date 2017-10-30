@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ************************** DAO SETTING *********************************-->
+	<!-- DAO object: Hibernate implementation -->
+	<bean id="customerDAO" class="org.king.customer.dao.CustomerDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="accountDAO" class="org.king.security.dao.hibernate.AccountDAOHibernate">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+
+	<bean id="customerAttachmentDAO" class="org.king.customer.dao.CustomerAttachmentDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+		
+	<!-- ************************** SERVICE SETTING *****************************-->
+	<!-- ***** security SERVICE *****-->
+	<bean id="customerService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<bean class="org.king.customer.service.impl.CustomerServiceImpl">
+				<property name="customerDAO">
+					<ref local="customerDAO" />
+				</property>	
+				<property name="accountDAO">
+					<ref local="accountDAO" />
+				</property>
+				<property name="customerAttachmentDAO">
+					<ref local="customerAttachmentDAO" />
+				</property>						
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="create*">PROPAGATION_REQUIRED,-BusinessException</prop>
+				<prop key="modify*">PROPAGATION_REQUIRED,-BusinessException</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED,-BusinessException</prop>
+				<prop key="search*">PROPAGATION_REQUIRED,readOnly,-BusinessException</prop>				
+				<prop key="save*">PROPAGATION_REQUIRED,-BusinessException</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+
+</beans>

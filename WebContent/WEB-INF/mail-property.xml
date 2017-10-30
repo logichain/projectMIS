@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>mail property</comment>
+<entry key="mail.from">it@foureasy.com.cn</entry>
+<entry key="mail.debug">false</entry>
+<entry key="mail.smtp.port">25</entry>
+<entry key="mail.smtp.auth">true</entry>
+<entry key="mail.smtp.host">smtp.qiye.163.com</entry>
+<entry key="mail.smtp.user">it@foureasy.com.cn</entry>
+<entry key="mail.smtp.password">Tongji962395</entry>
+</properties>

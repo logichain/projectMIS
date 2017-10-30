@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ************************** DAO SETTING *********************************-->
+	<!-- DAO object: Hibernate implementation -->
+	
+	<bean id="jobResponsibilityDAO" class="org.king.common.jobresponsibility.JobResponsibilityDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="projectRoleDAO" class="org.king.common.projectrole.ProjectRoleDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="tenderRoleDAO" class="org.king.common.tenderrole.TenderRoleDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="projectStatusDAO" class="org.king.common.projectstatus.ProjectStatusDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+
+	<bean id="attachmentCategoryDAO" class="org.king.common.attachmentcategory.AttachmentCategoryDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="customerTypeDAO" class="org.king.common.customertype.CustomerTypeDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="paymentTypeDAO" class="org.king.common.paymenttype.PaymentTypeDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="tradeTypeDAO" class="org.king.common.tradetype.TradeTypeDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="accountDAO" class="org.king.security.dao.hibernate.AccountDAOHibernate">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="departmentDAO" class="org.king.department.dao.DepartmentDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="personStatusDAO" class="org.king.common.personstatus.PersonStatusDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="politicalStatusDAO" class="org.king.common.politicalstatus.PoliticalStatusDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="educationBackgroundDAO" class="org.king.common.education.EducationBackgroundDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="postDAO" class="org.king.common.post.PostDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="customerNatureDAO" class="org.king.common.customernature.CustomerNatureDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+
+	<bean id="customerDAO" class="org.king.customer.dao.CustomerDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="deviceUnitDAO" class="org.king.common.deviceunit.DeviceUnitDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="checkTaskDAO" class="org.king.common.checktask.CheckTaskDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="noticeTypeDAO" class="org.king.common.noticetype.NoticeTypeDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<!-- ************************** SERVICE SETTING *****************************-->
+	
+	<bean id="commonService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<bean class="org.king.common.service.impl.CommonServiceImpl">
+			
+				<property name="jobResponsibilityDAO">
+					<ref local="jobResponsibilityDAO" />
+				</property>
+				<property name="projectRoleDAO">
+					<ref local="projectRoleDAO" />
+				</property>
+				<property name="tenderRoleDAO">
+					<ref local="tenderRoleDAO" />
+				</property>
+				<property name="projectStatusDAO">
+					<ref local="projectStatusDAO" />
+				</property>
+							
+				<property name="attachmentCategoryDAO">
+					<ref local="attachmentCategoryDAO" />
+				</property>
+				
+				<property name="customerTypeDAO">
+					<ref local="customerTypeDAO" />
+				</property>
+				<property name="paymentTypeDAO">
+					<ref local="paymentTypeDAO" />
+				</property>
+				<property name="tradeTypeDAO">
+					<ref local="tradeTypeDAO" />
+				</property>
+				
+				<property name="accountDAO">
+					<ref local="accountDAO" />
+				</property>
+				
+				<property name="departmentDAO">
+					<ref local="departmentDAO" />
+				</property>
+				
+				<property name="personStatusDAO">
+					<ref local="personStatusDAO" />
+				</property>
+				<property name="politicalStatusDAO">
+					<ref local="politicalStatusDAO" />
+				</property>
+				<property name="educationBackgroundDAO">
+					<ref local="educationBackgroundDAO" />
+				</property>
+				<property name="postDAO">
+					<ref local="postDAO" />
+				</property>
+				<property name="customerNatureDAO">
+					<ref local="customerNatureDAO" />
+				</property>
+		
+				<property name="customerDAO">
+					<ref local="customerDAO" />
+				</property>
+				<property name="deviceUnitDAO">
+					<ref local="deviceUnitDAO" />
+				</property>
+				
+				<property name="checkTaskDAO">
+					<ref local="checkTaskDAO" />
+				</property>
+				<property name="noticeTypeDAO">
+					<ref local="noticeTypeDAO" />
+				</property>
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="modify*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+
+	
+</beans>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>		
+		<form-bean name="projectSearchForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="searchProjectInfo" type="org.king.projectmanage.bean.TenderProject" />
+			<form-property name="projectInfo" type="org.king.projectmanage.bean.TenderProject" />
+			<form-property name="customerInfo" type="org.king.customer.bean.Customer" />
+			<form-property name="accountInfo" type="org.king.security.domain.Account" />			
+			<form-property name="budgetItemInfo" type="org.king.tender.bean.BudgetItem" />			
+			<form-property name="checkTaskInfo" type="org.king.common.checktask.CheckTask" />
+			<form-property name="teamMemberInfo" type="org.king.projectmanage.bean.ProjectTeam" />
+			<form-property name="projectApprovalRecordInfo" type="org.king.projectmanage.bean.ProjectApprovalRecord" />
+		</form-bean>
+								
+	</form-beans>
+
+	<action-mappings>
+		
+		<action path="/projectManage" type="org.king.projectmanage.action.ProjectManageAction" parameter="method" name="projectSearchForm" validate="false" unknown="false">			
+			<forward name="baseInput" path="YinputProjectDef" redirect="false"/>
+			<forward name="list" path="YlistProjectDef" redirect="false"/>
+			<forward name="baseEdit" path="YeditProjectBaseDef" redirect="false"/>
+			<forward name="teamMemberInput" path="YeditTeamMemberDef" redirect="false"/>
+			<forward name="schedulePlanInput" path="YeditSchedulePlanDef" redirect="false"/>
+			<forward name="scheduleInput" path="YeditScheduleDef" redirect="false"/>
+			<forward name="RecordList" path="YeditProjectRecordDef" redirect="false"/>
+			<forward name="budgetInput" path="YeditProjectBudgetDef" redirect="false"/>
+			<forward name="documentInput" path="YeditProjectDocumentDef" redirect="false"/>	
+			<forward name="refreshProjectBase" path="YrefreshProjectBaseDef" redirect="false"/>
+			<forward name="refreshProjectInput" path="YrefreshProjectInputDef" redirect="false"/>
+			<forward name="uploadAttachment" path="YuploadAttachmentForEditDef" redirect="false"/>
+			<forward name="searchCustomer" path="YsearchCustomerDef" redirect="false"/>
+			<forward name="searchAccount" path="YsearchAccountForEditDef" redirect="false"/>
+			<forward name="refreshTeam" path="YrefreshTeamDef" redirect="false"/>
+			<forward name="addScheduleStage" path="YscheduleStageDef" redirect="false"/>
+			<forward name="refreshScheduleStage" path="YrefreshScheduleStageDef" redirect="false"/>
+			<forward name="refreshSchedulePlan" path="YrefreshSchedulePlanDef" redirect="false"/>
+			<forward name="addScheduleTask" path="YscheduleTaskDef" redirect="false"/>
+			<forward name="refreshScheduleTask" path="YrefreshScheduleTaskDef" redirect="false"/>
+			<forward name="addTaskImplementRecord" path="YtaskImplementRecordDef" redirect="false"/>
+			<forward name="refreshSchedule" path="YrefreshScheduleDef" redirect="false"/>
+			<forward name="addAttachment" path="YaddAttachmentDef" redirect="false"/>
+			<forward name="editAttachment" path="YeditAttachmentDef" redirect="false"/>
+			<forward name="refreshProjectDocument" path="YrefreshProjectDocumentDef" redirect="false"/>
+			
+			
+			<forward name="listForFinish" path="YlistProjectForFinishDef" redirect="false"/>
+			<forward name="baseDisplay" path="YdisplayProjectBaseDef" redirect="false"/>
+			<forward name="teamMemberDisplay" path="YdisplayTeamMemberDef" redirect="false"/>
+			<forward name="schedulePlanDisplay" path="YdisplaySchedulePlanDef" redirect="false"/>
+			<forward name="scheduleDisplay" path="YdisplayScheduleDef" redirect="false"/>
+			<forward name="RecordListDisplay" path="YdisplayProjectRecordDef" redirect="false"/>
+			<forward name="budgetDisplay" path="YdisplayProjectBudgetDef" redirect="false"/>
+			<forward name="documentDisplay" path="YdisplayProjectDocumentDef" redirect="false"/>
+			<forward name="projectContractDisplay" path="YProjectContractDisplayDef" redirect="false"/>	
+			<forward name="projectAccountDisplay" path="projectAccountDisplayDef" redirect="false"/>
+			
+			<forward name="editDetailBudgetItem" path="YeditDetailBugetItemDef" redirect="false"/>
+			<forward name="refreshProjectBudget" path="YrefreshProjectBudgetDef" redirect="false"/>
+			<forward name="refreshMonthBudget" path="YrefreshMonthBudgetDef" redirect="false"/>
+			<forward name="refreshMonthSettlement" path="YrefreshMonthSettlementDef" redirect="false"/>
+			
+			<forward name="projectContract" path="YProjectContractEditDef" redirect="false"/>
+			<forward name="projectContractInput" path="YProjectContractInputDef" redirect="false"/>
+			<forward name="refreshProjectContract" path="YrefreshProjectContractDef" redirect="false"/>
+			<forward name="refreshProjectContractInput" path="YrefreshProjectContractInputDef" redirect="false"/>
+			<forward name="projectContractInfo" path="YProjectContractInfoDef" redirect="false"/>
+			
+			<forward name="monthBudget" path="YProjectMonthBudgetDef" redirect="false"/>
+			<forward name="monthSettlement" path="YProjectMonthSettlementDef" redirect="false"/>			
+						
+			<forward name="accountManage" path="editProjectAccountDef" redirect="false"/>
+			<forward name="refreshSaleContract" path="refreshSaleContractDef" redirect="false"/>
+			<forward name="saleContractInput" path="saleContractInputDef" redirect="false"/>	
+			<forward name="refreshSaleContractInput" path="refreshSaleContractInputDef" redirect="false"/>
+			<forward name="refreshPurchaseContract" path="refreshPurchaseContractDef" redirect="false"/>
+			<forward name="purchaseContractInput" path="purchaseContractInputDef" redirect="false"/>
+			<forward name="refreshPurchaseContractInput" path="refreshPurchaseContractInputDef" redirect="false"/>
+			<forward name="saleContractDisplay" path="saleContractDisplayDef" redirect="false"/>
+			
+			<forward name="refreshFeeTax" path="refreshFeeTaxDef" redirect="false"/>
+			<forward name="feeTaxInput" path="feeTaxInputDef" redirect="false"/>
+			
+			<forward name="accountStatistics" path="projectAccountStatisticsDef" redirect="false"/>
+			
+			<forward name="currentTask" path="currentTaskDef" redirect="false"/>
+			<forward name="futureTask" path="futureTaskDef" redirect="false"/>
+			<forward name="checkedTask" path="checkedTaskDef" redirect="false"/>
+			<forward name="checkTaskDisplay" path="checkTaskDisplayDef" redirect="false"/>
+			<forward name="checkTaskDetail" path="checkTaskDetailDef" redirect="false"/>
+			
+			<forward name="doCheckTask" path="doCheckTaskDef" redirect="false"/>
+			<forward name="refreshCurrentTask" path="refreshCurrentTaskDef" redirect="false"/>		
+			<forward name="refreshAbout" path="refreshAboutDef" redirect="false"/>	
+			
+			<forward name="aboutCurrentTask" path="aboutCurrentTaskDef" redirect="false"/>
+			<forward name="aboutFutureTask" path="aboutFutureTaskDef" redirect="false"/>
+			<forward name="aboutCheckedTask" path="aboutCheckedTaskDef" redirect="false"/>	
+			
+			<forward name="userAccountDisplay" path="userAccountDisplayDef" redirect="false"/>
+			
+			<forward name="saleContractPaymentDisplay" path="saleContractPaymentDisplayDef" redirect="false"/>
+			<forward name="purchaseContractPaymentDisplay" path="purchaseContractPaymentDisplayDef" redirect="false"/>
+			
+			<forward name="projectApprovalRecordList" path="listProjectApprovalRecordDef" redirect="false"/>
+			<forward name="projectApprovalRecordEdit" path="editProjectApprovalRecordDef" redirect="false"/>	
+			<forward name="projectApprovalRecordDisplay" path="displayProjectApprovalRecordDef" redirect="false"/>
+			<forward name="projectApprovalTenderEdit" path="projectApprovalTenderEditDef" redirect="false"/>
+			<forward name="refreshProjectApprovalRecordEdit" path="refreshProjectApprovalRecordEditDef" redirect="false"/>
+			<forward name="refreshProjectTenderEdit" path="refreshProjectTenderEditDef" redirect="false"/>
+			
+			<forward name="projectApprovalCheckList" path="listProjectApprovalCheckDef" redirect="false"/>
+			
+			<forward name="editApplyBudget" path="editApplyBudgetDef" redirect="false"/>
+			<forward name="editDetailBudgetItem" path="editApplyDetailBugetItemDef" redirect="false"/>
+			<forward name="refreshApplyBudget" path="refreshApplayBudgetDef" redirect="false"/>
+			<forward name="checkTaskList" path="checkTaskListDef" redirect="false"/>
+			
+			<forward name="costsumDisplay" path="displayTenderCostsumDef" redirect="false"/>
+			
+		</action>   
+	
+	</action-mappings>
+</struts-config>

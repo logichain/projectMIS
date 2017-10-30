@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ************************** DAO SETTING *********************************-->
+	<!-- DAO object: Hibernate implementation -->
+	<bean id="projectAttachmentDAO" class="org.king.projectmanage.dao.ProjectAttachmentDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="departmentDAO" class="org.king.department.dao.DepartmentDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+		
+	<!-- ************************** SERVICE SETTING *****************************-->
+	<!-- ***** security SERVICE *****-->
+	<bean id="dossierManageService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<bean class="org.king.dossier.service.impl.DossierManageServiceImpl">				
+				<property name="projectAttachmentDAO">
+					<ref local="projectAttachmentDAO" />
+				</property>	
+				<property name="departmentDAO">
+					<ref local="departmentDAO" />
+				</property>				
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="create*">PROPAGATION_REQUIRED,-BusinessException</prop>
+				<prop key="modify*">PROPAGATION_REQUIRED,-BusinessException</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED,-BusinessException</prop>
+				<prop key="search*">PROPAGATION_REQUIRED,readOnly,-BusinessException</prop>				
+				<prop key="save*">PROPAGATION_REQUIRED,-BusinessException</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+
+</beans>

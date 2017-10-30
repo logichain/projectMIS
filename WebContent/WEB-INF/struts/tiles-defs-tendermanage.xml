@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+          "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<definition name="editTenderDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/tenderProjectInput.jsp" />
+	</definition>
+	
+	<definition name="uploadAttachmentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/uploadattachment.jsp" />
+	</definition>
+	
+	<definition name="uploadReturnDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/uploadreturn.jsp" />
+	</definition>
+	
+	<definition name="searchCustomerDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/searchContacter.jsp" />
+	</definition>
+	
+	<definition name="searchAccountDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/searchAccount.jsp" />
+	</definition>
+	
+	
+	<definition name="refeshBaseDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/refreshbasereturn.jsp" />
+	</definition>
+	
+	<definition name="searchTenderDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/tenderProjectList.jsp" />
+	</definition>
+	
+	
+	<definition name="editBaseTenderProjectDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/tenderProjectBaseInput.jsp" />
+	</definition>
+	
+	<definition name="attachmentListDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/attachmentList.jsp" />
+	</definition>
+	
+	<definition name="editAttachmentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/attachmentEdit.jsp" />
+	</definition>
+	
+	<definition name="addAttachmentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/attachmentAdd.jsp" />
+	</definition>
+	
+	<definition name="editCompetitorDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/editCompetitor.jsp" />
+	</definition>
+	
+	<definition name="editTenderResultDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/editTenderResult.jsp" />
+	</definition>
+		
+	
+	<definition name="searchBudgetProjectDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/budgetProjectList.jsp" />
+	</definition>
+	
+	<definition name="editTenderBugetItemDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/editBudgetItem.jsp" />
+	</definition>
+	
+	<definition name="editApplyBudgetDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/editApplyBudget.jsp" />
+	</definition>
+	
+	<definition name="editDetailBugetItemDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/editDetailBudgetItem.jsp" />
+	</definition>
+		
+	<definition name="refreshBudgetItemDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/refreshBudgetItem.jsp" />
+	</definition>
+	
+	<definition name="refreshApplayBudgetDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/refreshApplyBudget.jsp" />
+	</definition>
+	
+	<definition name="editDeviceListDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/deviceTreeTable.jsp" />
+	</definition>
+	
+	<definition name="addFirstDeviceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/addFirstDevice.jsp" />
+	</definition>
+	
+	<definition name="refreshDeviceListDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/refreshDeviceList.jsp" />
+	</definition>
+	
+	<definition name="addSecondDeviceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/addSecondDevice.jsp" />
+	</definition>
+	
+	<definition name="addDetailDeviceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/addDetailDevice.jsp" />
+	</definition>
+	
+	<definition name="deviceQuotedPriceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/deviceQuotedPrice.jsp" />
+	</definition>
+	
+	<definition name="confirmSupplierDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/confirmsupplier.jsp" />
+	</definition>
+	
+	<definition name="addBaseDetailDeviceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/addBaseDetailDevice.jsp" />
+	</definition>
+	
+	<definition name="refreshDeviceQuotedPriceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/refreshDeviceQuotedPrice.jsp" />
+	</definition>
+	
+	<definition name="refeshAttachmentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/refreshattachmentreturn.jsp" />
+	</definition>
+	
+	<definition name="searchCustomerForEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/searchContacterforedit.jsp" />
+	</definition>
+	
+	<definition name="searchAccountForEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/searchAccountforedit.jsp" />
+	</definition>
+	
+	<definition name="searchCompetitorForEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/searchCompetitorforedit.jsp" />
+	</definition>
+	
+	<definition name="refeshResultReturnDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/refreshresultreturn.jsp" />
+	</definition>
+	
+	<definition name="refeshCompetitorReturnDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/refreshcompetitorreturn.jsp" />
+	</definition>
+	
+	<definition name="detailDeviceReportPriceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/detailDeviceReportPrice.jsp" />
+	</definition>
+	
+	<definition name="editBaseQuotedPriceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/editBaseQuotedPrice.jsp" />
+	</definition>
+		
+	<definition name="chooseDetailDeviceSupplierDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/chooseDetailDeviceSupplier.jsp" />
+	</definition>
+	<definition name="refreshChooseSupplierDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/refreshChooseSupplier.jsp" />
+	</definition>
+
+	<definition name="refreshEditBaseQuotedPriceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/refreshEditBaseQuotedPrice.jsp" />
+	</definition>
+	<definition name="searchQuotePriceSupplierDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/searchSupplier.jsp" />
+	</definition>
+	<definition name="refreshDetailDeviceReportPriceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/refreshDetailDeviceReportPrice.jsp" />
+	</definition>
+	<definition name="editTeamMemberDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/teamMemberEdit.jsp" />
+	</definition>
+	<definition name="refreshTeamDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/refreshteamreturn.jsp" />
+	</definition>
+	
+	<definition name="inputCreateCustomerDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/customerInput.jsp" />
+	</definition>
+	
+	<definition name="tenderContractCheckDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/tenderContractCheck.jsp" />
+	</definition>
+	<definition name="refreshContractDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/refreshcontractreturn.jsp" />
+	</definition>
+	
+	<definition name="displayTenderBaseDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderBase.jsp" />
+	</definition>
+	<definition name="displayTenderCompetitorDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderCompetitor.jsp" />
+	</definition>
+	<definition name="displayTenderConfirmsupplierDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderConfirmsupplier.jsp" />
+	</definition>
+	<definition name="displayTenderContractcheckDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderContractcheck.jsp" />
+	</definition>
+	<definition name="displayTenderCostsumDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderCostsum.jsp" />
+	</definition>
+	<definition name="displayTenderDeviceAskPriceDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderDeviceAskPrice.jsp" />
+	</definition>
+	<definition name="displayTenderDeviceListDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderDeviceList.jsp" />
+	</definition>
+	<definition name="displayTenderTeamMemberDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderTeamMember.jsp" />
+	</definition>
+	<definition name="displayTenderBudgetDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderBudget.jsp" />
+	</definition>
+	<definition name="displayTenderFileDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tenderdisplay/tenderFile.jsp" />
+	</definition>
+	<definition name="transferObjectListDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/transferObjectList.jsp" />
+	</definition>
+	<definition name="refreshTenderProjectListDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/refreshTenderProjectList.jsp" />
+	</definition>
+	
+	<definition name="refreshTenderBaseDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/refreshTenderBase.jsp" />
+	</definition>
+	<definition name="checkTaskListDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/tendermanage/checkTaskList.jsp" />
+	</definition>
+	
+</tiles-definitions>

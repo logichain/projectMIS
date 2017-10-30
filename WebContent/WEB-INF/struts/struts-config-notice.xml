@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="noticeForm" type="org.apache.struts.validator.DynaValidatorForm">			
+			<form-property name="noticeInfo" type="org.king.notice.bean.InfomationNotice" />
+			<form-property name="searchInfo" type="org.king.notice.bean.InfomationNotice" />			
+		</form-bean>		
+								
+	</form-beans>
+
+	<action-mappings>
+		<action path="/noticeManage" type="org.king.notice.action.InfomationNoticeAction" parameter="method" name="noticeForm" validate="false" unknown="false">
+			<forward name="input" path="inputNoticeDef" redirect="false" />
+			<forward name="display" path="displayNoticeDef" redirect="false" />
+			<forward name="list" path="listNoticeDef" redirect="false" />
+			<forward name="aboutList" path="aboutListNoticeDef" redirect="false" />
+			<forward name="refreshInput" path="refreshInputDef" redirect="false"/>
+			<forward name="uploadAttachment" path="uploadAttachmentForEditDef" redirect="false"/>
+		</action>		
+		
+	</action-mappings>
+</struts-config>

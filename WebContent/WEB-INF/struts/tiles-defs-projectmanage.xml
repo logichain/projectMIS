@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+          "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<definition name="YinputProjectDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectInput.jsp" />
+	</definition>
+	
+	<definition name="YrefreshProjectInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshProjectInput.jsp" />
+	</definition>
+	
+	<definition name="YrefreshProjectBaseDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshProjectBase.jsp" />
+	</definition>
+	
+	<definition name="YrefreshTeamDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshteamreturn.jsp" />
+	</definition>
+		
+	<definition name="YsearchCustomerDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/searchCustomer.jsp" />
+	</definition>
+	
+		
+	<definition name="YlistProjectDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectList.jsp" />
+	</definition>
+		
+			
+	<definition name="YeditProjectBaseDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectBaseEdit.jsp" />
+	</definition>
+		
+	<definition name="YeditTeamMemberDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectTeamMemberEdit.jsp" />
+	</definition>
+	
+	<definition name="YeditSchedulePlanDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectSchedulePlanEdit.jsp" />
+	</definition>
+	
+	<definition name="YeditScheduleDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectScheduleEdit.jsp" />
+	</definition>
+	
+	<definition name="YeditProjectRecordDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectRecordEdit.jsp" />
+	</definition>
+	
+	<definition name="YeditProjectBudgetDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectBudgetEdit.jsp" />
+	</definition>
+	
+	<definition name="YeditProjectDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectDocumentEdit.jsp" />
+	</definition>
+	
+	<definition name="YuploadAttachmentForEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/uploadattachmentforedit.jsp" />
+	</definition>
+	
+	<definition name="YsearchAccountForEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/searchAccountforedit.jsp" />
+	</definition>
+	
+	<definition name="YscheduleStageDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/addschedulestage.jsp" />
+	</definition>
+	
+	<definition name="YrefreshScheduleStageDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshScheduleStage.jsp" />
+	</definition>
+	
+	<definition name="YrefreshSchedulePlanDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshSchedulePlan.jsp" />
+	</definition>
+	
+	<definition name="YscheduleTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/addscheduletask.jsp" />
+	</definition>
+	
+	<definition name="YrefreshScheduleTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshScheduleTask.jsp" />
+	</definition>
+	
+	<definition name="YtaskImplementRecordDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/addTaskImplementRecord.jsp" />
+	</definition>
+	
+	<definition name="YrefreshScheduleDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshSchedule.jsp" />
+	</definition>
+	
+	<definition name="YaddAttachmentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/addattachment.jsp" />
+	</definition>
+	<definition name="YeditAttachmentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/editattachment.jsp" />
+	</definition>
+	<definition name="YrefreshProjectDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshProjectDocument.jsp" />
+	</definition>
+	
+	<definition name="YlistProjectForFinishDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectList.jsp" />
+	</definition>
+	
+	
+			
+	<definition name="YdisplayProjectBaseDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectBase.jsp" />
+	</definition>
+		
+	<definition name="YdisplayTeamMemberDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectTeamMember.jsp" />
+	</definition>
+	
+	<definition name="YdisplaySchedulePlanDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectSchedulePlan.jsp" />
+	</definition>
+	
+	<definition name="YdisplayScheduleDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectSchedule.jsp" />
+	</definition>
+	
+	<definition name="YdisplayProjectRecordDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectRecord.jsp" />
+	</definition>
+	
+	<definition name="YdisplayProjectBudgetDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectBudget.jsp" />
+	</definition>
+	
+	<definition name="YdisplayProjectDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectDocument.jsp" />
+	</definition>
+	<definition name="YProjectContractDisplayDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectContract.jsp" />
+	</definition>
+	<definition name="projectAccountDisplayDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/projectAccount.jsp" />
+	</definition>
+		
+	<definition name="YeditDetailBugetItemDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/editDetailBudgetItem.jsp" />
+	</definition>		
+	<definition name="YrefreshProjectBudgetDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshProjectBudget.jsp" />
+	</definition>
+	<definition name="YrefreshMonthBudgetDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshMonthBudget.jsp" />
+	</definition>
+	<definition name="YrefreshMonthSettlementDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshMonthSettlement.jsp" />
+	</definition>
+	
+	<definition name="YProjectContractEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectContractEdit.jsp" />
+	</definition>
+	<definition name="YProjectContractInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectContractInput.jsp" />
+	</definition>
+	<definition name="YProjectContractInfoDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectContractInfo.jsp" />
+	</definition>
+
+	<definition name="YProjectMonthBudgetDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectMonthBudget.jsp" />
+	</definition>
+	<definition name="YProjectMonthSettlementDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectMonthSettlement.jsp" />
+	</definition>
+	
+	<definition name="YrefreshProjectContractDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshProjectContract.jsp" />
+	</definition>
+	<definition name="YrefreshProjectContractInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshProjectContractInput.jsp" />
+	</definition>
+		
+	<definition name="editProjectAccountDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectAccountEdit.jsp" />
+	</definition>
+	<definition name="saleContractInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/saleContractInput.jsp" />
+	</definition>
+	<definition name="refreshSaleContractInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshSaleContractInput.jsp" />
+	</definition>
+	<definition name="refreshSaleContractDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshSaleContract.jsp" />
+	</definition>
+	<definition name="refreshPurchaseContractDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshPurchaseContract.jsp" />
+	</definition>	
+	<definition name="purchaseContractInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/purchaseContractInput.jsp" />
+	</definition>
+	<definition name="refreshPurchaseContractInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshPurchaseContractInput.jsp" />
+	</definition>
+	<definition name="saleContractDisplayDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/saleContractDisplay.jsp" />
+	</definition>
+	
+	<definition name="feeTaxInputDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/feeTaxInput.jsp" />
+	</definition>
+	<definition name="refreshFeeTaxDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshFeeTax.jsp" />
+	</definition>	
+	<definition name="projectAccountStatisticsDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectAccountStatistics.jsp" />
+	</definition>	
+	
+	<definition name="currentTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/checktask/currentTask.jsp" />
+	</definition>
+	<definition name="futureTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/checktask/futureTask.jsp" />
+	</definition>
+	<definition name="checkedTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/checktask/checkedTask.jsp" />
+	</definition>
+	<definition name="checkTaskDisplayDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/checktask/checkTaskDisplay.jsp" />
+	</definition>
+	<definition name="checkTaskDetailDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/checktask/checkTaskDetail.jsp" />
+	</definition>
+	
+	<definition name="doCheckTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/checktask/doCheckTask.jsp" />
+	</definition>
+	<definition name="refreshCurrentTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/checktask/refreshCurrentTask.jsp" />
+	</definition>
+	<definition name="refreshAboutDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/checktask/refreshAbout.jsp" />
+	</definition>
+	
+	<definition name="aboutCurrentTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/about/currentTask.jsp" />
+	</definition>
+	<definition name="aboutFutureTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/about/futureTask.jsp" />
+	</definition>
+	<definition name="aboutCheckedTaskDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/about/checkedTask.jsp" />
+	</definition>
+	
+	<definition name="userAccountDisplayDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/userAccountInfo.jsp" />
+	</definition>
+	
+	<definition name="saleContractPaymentDisplayDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/saleContractPaymentDisplay.jsp" />
+	</definition>
+	<definition name="purchaseContractPaymentDisplayDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/purchaseContractPaymentDisplay.jsp" />
+	</definition>
+	
+	
+	<definition name="listProjectApprovalRecordDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectApprovalRecordList.jsp" />
+	</definition>
+	<definition name="editProjectApprovalRecordDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectApprovalRecordEdit.jsp" />
+	</definition>
+	<definition name="displayProjectApprovalRecordDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectApprovalRecordDisplay.jsp" />
+	</definition>
+	<definition name="projectApprovalTenderEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectApprovalTenderEdit.jsp" />
+	</definition>
+	<definition name="refreshProjectTenderEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshProjectTenderEdit.jsp" />
+	</definition>
+	<definition name="refreshProjectApprovalRecordEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshProjectApprovalRecordEdit.jsp" />
+	</definition>
+	
+	<definition name="listProjectApprovalCheckDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/projectApprovalCheckList.jsp" />
+	</definition>
+	
+	<definition name="editApplyDetailBugetItemDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/budgetmanage/editApplyDetailBudgetItem.jsp" />
+	</definition>
+	
+	<definition name="editTenderDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/tenderDocumentEdit.jsp" />
+	</definition>
+	<definition name="uploadTenderAttachmentForEditDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/uploadTenderAttachmentforedit.jsp" />
+	</definition>
+	<definition name="refreshTenderDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/refreshTenderDocument.jsp" />
+	</definition>
+	
+	<definition name="displayTenderDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectdisplay/tenderDocument.jsp" />
+	</definition>
+	<definition name="editTenderAttachmentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/projectmanage/editTenderAttachment.jsp" />
+	</definition>
+</tiles-definitions>

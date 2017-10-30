@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ************************** DAO SETTING *********************************-->
+	<!-- DAO object: Hibernate implementation -->
+	<bean id="tenderProjectDAO" class="org.king.projectmanage.dao.TenderProjectDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="deviceList1stDAO" class="org.king.tender.dao.DeviceList1stDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="deviceList2ndDAO" class="org.king.tender.dao.DeviceList2ndDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="deviceListDetailDAO" class="org.king.tender.dao.DeviceListDetailDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="budgetItemDAO" class="org.king.tender.dao.BudgetItemDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="budgetItemModelDAO" class="org.king.tender.dao.BudgetItemModelDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	<bean id="projectBudgetDAO" class="org.king.tender.dao.ProjectBudgetDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+
+    <bean id="projectAttachmentDAO" class="org.king.projectmanage.dao.ProjectAttachmentDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<bean id="checkTaskDAO" class="org.king.common.checktask.CheckTaskDAO">
+		<property name="baseDAO">
+			<ref bean="baseDAO" />
+		</property>
+	</bean>
+	
+	<!-- ************************** SERVICE SETTING *****************************-->
+	
+	<bean id="tenderManageService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<bean class="org.king.tender.service.impl.TenderManageServiceImpl">
+				<property name="tenderProjectDAO">
+					<ref local="tenderProjectDAO" />
+				</property>
+				<property name="deviceList1stDAO">
+					<ref local="deviceList1stDAO" />
+				</property>
+				<property name="deviceList2ndDAO">
+					<ref local="deviceList2ndDAO" />
+				</property>
+				<property name="deviceListDetailDAO">
+					<ref local="deviceListDetailDAO" />
+				</property>
+				<property name="budgetItemDAO">
+					<ref local="budgetItemDAO" />
+				</property>
+				<property name="budgetItemModelDAO">
+					<ref local="budgetItemModelDAO" />
+				</property>
+				<property name="projectBudgetDAO">
+					<ref local="projectBudgetDAO" />
+				</property>
+
+				<property name="projectAttachmentDAO">
+					<ref local="projectAttachmentDAO" />
+				</property>
+				<property name="checkTaskDAO">
+					<ref local="checkTaskDAO" />
+				</property>
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="modify*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+
+	
+</beans>

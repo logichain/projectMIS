@@ -1,0 +1,26 @@
+2016-04-13 17:01:50,267 INFO [org.king.security.web.listener.InitListener] - <********* Initialized Oneks now *********************>
+2016-04-13 17:01:50,267 INFO [org.king.security.web.listener.InitListener] - <********* Initialized Oneks now *********************>
+2016-04-13 17:01:50,305 INFO [org.springframework.jdbc.datasource.JdbcTransactionObjectSupport] - <JDBC 3.0 Savepoint class is available>
+2016-04-13 17:01:50,428 INFO [org.king.security.service.impl.SecurityServiceImpl] - <*****************init security begin!****************>
+2016-04-13 17:01:50,428 INFO [org.king.security.service.impl.SecurityServiceImpl] - <*****************init security begin!****************>
+2016-04-13 17:01:50,461 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - <Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]>
+2016-04-13 17:01:50,481 INFO [org.springframework.jdbc.support.SQLErrorCodesFactory] - <SQLErrorCodes loaded: [DB2, HSQL, MS-SQL, MySQL, Oracle, Informix, PostgreSQL, Sybase]>
+2016-04-13 17:01:51,779 INFO [org.king.security.service.impl.SecurityServiceImpl] - <*****************init security success!***************>
+2016-04-13 17:01:51,779 INFO [org.king.security.service.impl.SecurityServiceImpl] - <*****************init security success!***************>
+2016-04-13 17:01:51,864 INFO [org.king.security.web.listener.InitListener] - <********* Initialized Oneks success *********************>
+2016-04-13 17:01:51,864 INFO [org.king.security.web.listener.InitListener] - <********* Initialized Oneks success *********************>
+2016-04-13 17:01:51,876 INFO [org.springframework.orm.hibernate3.support.OpenSessionInViewFilter] - <Initializing filter 'hibernateFilter'>
+2016-04-13 17:01:51,887 INFO [org.springframework.orm.hibernate3.support.OpenSessionInViewFilter] - <Filter 'hibernateFilter' configured successfully>
+2016-04-13 17:01:52,722 INFO [org.apache.struts.tiles.TilesPlugin] - <Tiles definition factory loaded for module ''.>
+2016-04-13 17:01:52,744 INFO [org.apache.struts.validator.ValidatorPlugIn] - <Loading validation rules file from '/WEB-INF/struts/validator-rules.xml'>
+2016-04-13 17:01:52,753 INFO [org.apache.struts.validator.ValidatorPlugIn] - <Loading validation rules file from '/WEB-INF/struts/validator-rules-custom.xml'>
+2016-04-13 17:01:52,770 INFO [org.apache.struts.validator.ValidatorPlugIn] - <Loading validation rules file from '/WEB-INF/struts/validation.xml'>
+2016-04-13 17:01:53,025 INFO [com.pow2.webgui.resources.WebGuiInit] - </WEB-INF/webgui/wgPrototypes.properties>
+2016-04-13 17:01:53,030 INFO [com.pow2.webgui.WidgetFactory] - <::instance - got a new instance.>
+2016-04-13 17:01:53,111 INFO [com.pow2.webgui.WidgetFactory] - <::register - widget successfully registered using key [boTab]>
+2016-04-13 17:01:53,132 INFO [com.pow2.webgui.WidgetFactory] - <::register - widget successfully registered using key [boTabbedPanel]>
+2016-04-13 17:01:53,136 INFO [com.pow2.webgui.WidgetFactory] - <::register - widget successfully registered using key [boWindow]>
+2016-04-13 17:01:53,136 ERROR [com.pow2.webgui.WidgetFactory] - <::setPrototypes - exception,unknow>
+2016-04-13 17:01:53,136 INFO [com.pow2.webgui.resources.WebGuiInit] - <::init - webGui prototypes successfull registered.>
+2016-04-13 17:01:53,383 INFO [com.pow2.webgui.resources.WebGuiInit] - <::init - webGui Velocity template successfully configured using [D:\workspace\newProjectMIS\WebRoot\/WEB-INF/webgui/velocity.properties] file.>
+2016-04-13 17:01:53,383 INFO [com.pow2.webgui.resources.WebGuiInit] - <::init - Velocity template path: [D:\workspace\newProjectMIS\WebRoot\WEB-INF\pages\templates]>

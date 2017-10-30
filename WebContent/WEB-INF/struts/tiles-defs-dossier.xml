@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+          "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>		
+	<definition name="editDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/dossier/documentEdit.jsp" />
+	</definition>
+	
+	<definition name="inputDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/dossier/documentInput.jsp" />
+	</definition>
+	
+	<definition name="listDocumentDef" extends="adminDef">
+		<put name="body" value="/WEB-INF/pages/dossier/documentList.jsp" />
+	</definition>
+	
+</tiles-definitions>
